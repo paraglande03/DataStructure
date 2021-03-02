@@ -1,6 +1,6 @@
 import org.junit.Assert;
 import org.junit.Test;
-
+//
 public class MyNodeTest {
     @Test
     public void givenThreeNumWhenLinkedShouldPassLinkedListTest() {
