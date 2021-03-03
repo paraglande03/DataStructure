@@ -78,15 +78,38 @@ public class MyLinkedListTest {
     }
     @Test
     public void GivenThreeNumbersShouldBeAbleToSearch() {
-        MyNode<Integer> firstNode = new MyNode<>(56);
-        MyNode<Integer> secondNode = new MyNode<>(30);
-        MyNode<Integer> thirdNode = new MyNode<>(70);
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
         MyLinkedList myLinkedList = new MyLinkedList();
-        myLinkedList.append(firstNode);
-        myLinkedList.append(secondNode);
-        myLinkedList.append(thirdNode);
+        myLinkedList.append(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
         myLinkedList.printMyNodes();
-        Assert.assertEquals(true,myLinkedList.search(secondNode));
+        Assert.assertEquals(true,myLinkedList.search(mySecondNode));
 
+    }
+    @Test
+    public void givenThreeNumbersShouldBeAbleToSearchGivenNodeAndInsert() {
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+        MyNode<Integer> newNode = new MyNode<>(40);
+
+        MyLinkedList myLinkedList = new MyLinkedList();
+
+        myLinkedList.append(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
+        myLinkedList.printMyNodes();
+
+        INode newNodePosition = myLinkedList.insertingBySearching(newNode,mySecondNode);
+        myLinkedList.printMyNodes();
+        boolean result = myLinkedList.head.equals(myFirstNode) &&
+                myLinkedList.head.getNext().equals(mySecondNode) &&
+                newNodePosition.getNext().equals(newNode) &&
+                myLinkedList.tail.equals(myThirdNode);
+
+        Assert.assertTrue(result);
     }
 }
