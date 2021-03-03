@@ -1,6 +1,6 @@
 public class MyLinkedList {
     public static INode tail;
-    public  INode head;
+    public static INode head;
     public static int count;
 
     public static int getCount() {
@@ -59,7 +59,7 @@ public class MyLinkedList {
         return tempNode;
     }
 
-    public void printMyNodes(){
+    public static void printMyNodes(){
         StringBuffer myNodes = new StringBuffer("my Nodes: ");
         INode tempNode=head;
         while (tempNode.getNext()!= null){
@@ -106,6 +106,21 @@ public class MyLinkedList {
         INode tempNode = tempDeleteNode.getNext();
         tempDeleteNode.setNext(tempDeleteNode.getNext().getNext());
         return tempNode;
+    }
+    public static void sorted(INode newNode) {
+        count++;
+        INode currentNode = head;
+        INode prevNode = null;
+        while (currentNode != null && (int) newNode.getKey() > (int) currentNode.getKey()) {
+            prevNode = currentNode;
+            currentNode = currentNode.getNext();
+        }
+        if (prevNode == null) {
+            head = newNode;
+        } else {
+            prevNode.setNext(newNode);
+        }
+        newNode.setNext(currentNode);
     }
 
 

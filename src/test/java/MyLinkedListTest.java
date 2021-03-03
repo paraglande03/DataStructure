@@ -134,4 +134,30 @@ public class MyLinkedListTest {
                 myLinkedList.tail.equals(fourthNode);
         Assert.assertTrue(result);
     }
+    @Test
+    public void given4NumbersShouldSortedInASECorderInLinkedList() {
+        MyNode<Integer> myFirstNode=new MyNode<>(56);
+        MyNode<Integer> mySecondNode=new MyNode<>(30);
+        MyNode<Integer> myThirdNode=new MyNode<>(70);
+        MyNode<Integer> myNewNode=new MyNode<>(40);
+
+        MyLinkedList.sorted(myFirstNode);
+        MyLinkedList.printMyNodes();
+
+        MyLinkedList.sorted(mySecondNode);
+        MyLinkedList.printMyNodes();
+        MyLinkedList.sorted(myThirdNode);
+        MyLinkedList.printMyNodes();
+
+
+        MyLinkedList.sorted(myNewNode);
+
+        MyLinkedList.printMyNodes();
+        System.out.println(MyLinkedList.getCount());
+        boolean result =MyLinkedList.head.equals(mySecondNode)
+                && MyLinkedList.head.getNext().equals(myNewNode)
+                &&MyLinkedList.head.getNext().getNext().equals(myFirstNode)
+                && MyLinkedList.head.getNext().getNext().getNext().equals(myThirdNode);
+        Assert.assertTrue(result);
+    }
 }

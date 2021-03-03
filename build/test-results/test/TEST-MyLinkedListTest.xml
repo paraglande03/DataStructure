@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="MyLinkedListTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-03T17:46:38" hostname="PARAG" time="0.007">
+<testsuite name="MyLinkedListTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-03T18:02:20" hostname="PARAG" time="0.006">
   <properties/>
-  <testcase name="given3numbersWhenLinkedListShouldBeAbleToSerchAndDelete" classname="MyLinkedListTest" time="0.007"/>
-  <system-out><![CDATA[my Nodes: 56->30->70->40
-my Nodes: 56->70->40
+  <testcase name="given4NumbersShouldSortedInASECorderInLinkedList" classname="MyLinkedListTest" time="0.006"/>
+  <system-out><![CDATA[my Nodes: 56
+my Nodes: 30->56
+my Nodes: 30->56->70
+my Nodes: 30->40->56->70
+4
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
