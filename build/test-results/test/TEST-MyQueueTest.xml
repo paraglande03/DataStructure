@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="MyQueueTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-03T18:35:39" hostname="PARAG" time="0.006">
+  <properties/>
+  <testcase name="givenThreeNoWhenAddedToQueueShouldReturnTrue" classname="MyQueueTest" time="0.006"/>
+  <system-out><![CDATA[my Nodes: 56
+my Nodes: 30->56
+my Nodes: 70->30->56
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
