@@ -112,4 +112,26 @@ public class MyLinkedListTest {
 
         Assert.assertTrue(result);
     }
+    @Test
+    public void given3numbersWhenLinkedListShouldBeAbleToSerchAndDelete() {
+        MyNode<Integer> firstNode = new MyNode<>(56);
+        MyNode<Integer> secondNode = new MyNode<>(30);
+        MyNode<Integer> thirdNode = new MyNode<>(70);
+        MyNode<Integer> fourthNode = new MyNode<>(40);
+
+        MyLinkedList myLinkedList = new MyLinkedList();
+
+        myLinkedList.append(firstNode);
+        myLinkedList.append(secondNode);
+        myLinkedList.append(thirdNode);
+        myLinkedList.append(fourthNode);
+        myLinkedList.printMyNodes();
+        myLinkedList.deleteAtIndex(secondNode);
+        myLinkedList.printMyNodes();
+
+        boolean result = myLinkedList.head.equals(firstNode) &&
+                myLinkedList.head.getNext().equals(thirdNode) &&
+                myLinkedList.tail.equals(fourthNode);
+        Assert.assertTrue(result);
+    }
 }

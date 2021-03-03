@@ -1,12 +1,17 @@
 public class MyLinkedList {
-    public INode tail;
-    public INode head;
+    public static INode tail;
+    public  INode head;
+    public static int count;
+
+    public static int getCount() {
+        return count;
+    }
 
     public MyLinkedList() {
         this.head=null;
         this.tail=null;
     }
-    public void add(INode newNode){
+    public  void add(INode newNode){
         if(this.tail==null){
             this.tail=newNode;
         }
@@ -77,9 +82,32 @@ public class MyLinkedList {
         return false;
     }
     public INode insertingBySearching(INode newNode, INode insertNode) {
-            insert(insertNode, newNode);
-        INode newInsertedNode = head.getNext();
-        return newInsertedNode;
+        INode tempNode = this.head;
+        while (!tempNode.getKey().equals(insertNode.getKey())) {
+            tempNode = tempNode.getNext();
+        }
+        newNode.setNext(tempNode.getNext());
+        tempNode.setNext(newNode);
+        return tempNode;
     }
+
+    public INode deleteAtIndex(INode element) {
+        count--;
+
+        if (head.equals(element)) {
+            INode del = head;
+            head = head.getNext();
+            return del;
+        }
+        INode tempDeleteNode= head;
+        while (!tempDeleteNode.getNext().equals(element)) {
+            tempDeleteNode = tempDeleteNode.getNext();
+        }
+        INode tempNode = tempDeleteNode.getNext();
+        tempDeleteNode.setNext(tempDeleteNode.getNext().getNext());
+        return tempNode;
+    }
+
+
 
 }
