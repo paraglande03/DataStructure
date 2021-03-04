@@ -6,3 +6,5 @@ MyStackTest.java
  MyStackTest
 MyQueueTest.java
  MyQueueTest
+MyHashMapTest.java
+ MyHashMapTest

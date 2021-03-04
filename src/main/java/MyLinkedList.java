@@ -1,4 +1,4 @@
-public class MyLinkedList {
+public class MyLinkedList <K>{
     public static INode tail;
     public static INode head;
     public static int count;
@@ -106,6 +106,16 @@ public class MyLinkedList {
         INode tempNode = tempDeleteNode.getNext();
         tempDeleteNode.setNext(tempDeleteNode.getNext().getNext());
         return tempNode;
+    }
+    public INode<K> search(K key) {
+        INode<K> tempNode = head;
+        while (tempNode != null && tempNode.getNext() != null) {
+            if (tempNode.getKey().equals(key)) {
+                return tempNode;
+            }
+            tempNode = tempNode.getNext();
+        }
+        return null;
     }
     public static void sorted(INode newNode) {
         count++;
