@@ -12,3 +12,5 @@ MyLinkedList.java
  MyLinkedList
 MyNode.java
  MyNode
+MyLinkedHashMap.java
+ MyLinkedHashMap

@@ -8,3 +8,5 @@ MyQueueTest.java
  MyQueueTest
 MyHashMapTest.java
  MyHashMapTest
+MyLinkedHashMapTest.java
+ MyLinkedHashMapTest
